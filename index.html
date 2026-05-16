@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Matcha Haus | Demo Café Website</title>
+  <meta name="description" content="A demo matcha café website for learning Google Analytics and Google Search Console." />
+
+  <!-- Paste your Google Analytics / Google Tag code here later -->
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Georgia, serif;
+      background: #f7f2e8;
+      color: #31412f;
+      line-height: 1.6;
+    }
+
+    header {
+      min-height: 90vh;
+      padding: 30px;
+      background: linear-gradient(135deg, #e6efd4, #f7f2e8);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 18px 28px;
+      background: rgba(247, 242, 232, 0.9);
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    nav a {
+      color: #31412f;
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6rem);
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 2.3rem;
+      font-weight: 400;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    p {
+      max-width: 650px;
+    }
+
+    .hero-text {
+      font-size: 1.2rem;
+      margin: 20px 0 30px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #8fa866;
+      color: white;
+      padding: 14px 24px;
+      border-radius: 999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    section {
+      padding: 90px 24px;
+    }
+
+    .center {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cards {
+      max-width: 1000px;
+      margin: 30px auto 0;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.65);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 20px 60px rgba(60, 70, 48, 0.08);
+      text-align: center;
+    }
+
+    .price {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      color: #6f8552;
+    }
+
+    form {
+      max-width: 520px;
+      margin: 30px auto 0;
+      display: grid;
+      gap: 14px;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px;
+      border-radius: 16px;
+      border: 1px solid #d1c6b4;
+      font-family: inherit;
+      background: white;
+    }
+
+    footer {
+      padding: 40px;
+      text-align: center;
+      background: #31412f;
+      color: white;
+    }
+
+    .thank-you {
+      display: none;
+      margin-top: 24px;
+      padding: 24px;
+      border-radius: 24px;
+      background: #e6efd4;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="#home">Home</a>
+  <a href="#menu">Menu</a>
+  <a href="#order">Order</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
+  <h1>Matcha Haus</h1>
+  <p class="hero-text">A soft demo café website for learning analytics, search, and simple website publishing.</p>
+  <a href="#order" class="button" id="heroOrderBtn">Order a Demo Latte</a>
+</header>
+
+<section id="menu">
+  <h2>Menu</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Classic Matcha Latte</h3>
+      <p>Earthy matcha with steamed milk.</p>
+      <div class="price">$5.50</div>
+      <button class="button menuBtn">Choose</button>
+    </div>
+
+    <div class="card">
+      <h3>Iced Strawberry Matcha</h3>
+      <p>Layered strawberry, milk, and matcha.</p>
+      <div class="price">$6.25</div>
+      <button class="button menuBtn">Choose</button>
+    </div>
+
+    <div class="card">
+      <h3>Vanilla Oat Matcha</h3>
+      <p>Creamy oat milk with soft vanilla.</p>
+      <div class="price">$6.00</div>
+      <button class="button menuBtn">Choose</button>
+    </div>
+  </div>
+</section>
+
+<section id="order" class="center">
+  <h2>Place a Demo Order</h2>
+  <p>This form is fake. It is only here so you can test button clicks and conversion events.</p>
+
+  <form id="orderForm">
+    <input type="text" placeholder="Your name" required />
+    <select required>
+      <option value="">Choose a drink</option>
+      <option>Classic Matcha Latte</option>
+      <option>Iced Strawberry Matcha</option>
+      <option>Vanilla Oat Matcha</option>
+    </select>
+    <button class="button" type="submit" id="placeOrderBtn">Place Demo Order</button>
+  </form>
+
+  <div class="thank-you" id="thankYou">
+    <h3>Thank you!</h3>
+    <p>Your demo order was completed. This is a good event to track in Google Analytics.</p>
+  </div>
+</section>
+
+<section id="blog" class="center">
+  <h2>Blog</h2>
+  <p><strong>How to Make Matcha at Home</strong></p>
+  <p>Start with fine matcha powder, add warm water, whisk until smooth, then pour milk slowly for a calm green cup.</p>
+</section>
+
+<section id="contact" class="center">
+  <h2>Contact</h2>
+  <p>Email: hello@matchahaus.demo</p>
+  <p>Location: Demo Street, Internet</p>
+</section>
+
+<footer>
+  <p>Matcha Haus — demo website for learning Google Analytics and Search Console.</p>
+</footer>
+
+<script>
+  const orderForm = document.getElementById("orderForm");
+  const thankYou = document.getElementById("thankYou");
+
+  orderForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    thankYou.style.display = "block";
+
+    // Later, you can track this as a Google Analytics event.
+    console.log("Demo order completed");
+  });
+
+  document.querySelectorAll(".menuBtn").forEach(button => {
+    button.addEventListener("click", function() {
+      document.getElementById("order").scrollIntoView({ behavior: "smooth" });
+      console.log("Menu item clicked");
+    });
+  });
+</script>
+
+</body>
+</html>
